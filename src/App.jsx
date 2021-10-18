@@ -13,23 +13,53 @@ export default class App extends React.Component {
         dataset: defaultDataset,
         open: false,
     }
+    this.selectAnswer = this.selectAnswer.bind(this);
   }
 
 
-  initAnswer = () => {
-    const initDataset = this.state.dataset[this.state.currentId]
-    const initAnswers = initDataset.answers;
-      
-    this.setState({
-      answers: initAnswers
-
+  displayNextQuestion = (nextQuestionId) => {
+    const chats = this.state.chats
+    chats.push({
+      text: this.state.dataset[nextQuestionId].question,
+      type: 'question'
     })
+
+    this.setState({
+      answers: this.state.dataset[nextQuestionId].answers,
+      chats: chats,
+      currentId: nextQuestionId
+    })
+
   }
+
+  selectAnswer = (selectAnswer, nextQuestionId) => {
+    switch (true){
+      case (nextQuestionId === 'init'):
+        this.displayNextQuestion(nextQuestionId)
+        break;
+      default:
+        const chats = this.state.chats;
+        chats.push({
+          text: selectAnswer,
+          type: 'answer'
+        })
+
+        this.setState(  {
+          chats: chats
+        })
+
+        this.displayNextQuestion(nextQuestionId)
+        break;
+    }
+
+  }
+ 
 
     
 
   componentDidMount() {
-    this.initAnswer()
+    const initAnswer = "";
+    this.selectAnswer(initAnswer, this.state.currentId)
   }
 
 
@@ -50,10 +80,7 @@ export default class App extends React.Component {
     })
   }
 
-  componentDidMount(){
-    this.initChats();
-    this.initAnswer();
-  }
+
 
 
   render() {
@@ -61,8 +88,8 @@ export default class App extends React.Component {
         <section className="c-section">
           <div className="c-box">
             <Chats chats = {this.state.chats}/>
-            <AnswersList answers={this.state.answers}/>
-            ズキューーん
+            <AnswersList answers={this.state.answers} select={this.selectAnswer}/>
+            there is nothing worng with this chatBot!🍵
           </div>
         </section>
       );
