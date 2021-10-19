@@ -6,7 +6,7 @@ const defaultDataset = {
             {content: "学習コミュニティについて知りたい", nextId: "community"},
             {content: "お付き合いしたい", nextId: "dating"},
         ],
-        question: "こんにちは！🐯トラハックへのご用件はなんでしょうか？",
+        question: "こんにちは！🐳itemへのご用件はなんでしょうか？",
     },
     "job_offer": {
         answers: [
@@ -47,11 +47,11 @@ const defaultDataset = {
     },
     "consultant": {
         answers: [
-            {content: "電気", nextId: "https://i-tem.info/construction.html#997"},
-            {content: "工事実績について知りたい", nextId: "community"},
+            {content: "電気部のHPへ", nextId: "https://i-tem.info/construction.html#997"},
+            {content: "簡単に工事実績について知りたい", nextId: "community"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
-        question: "トラハックは普段からYouTubeでキャリアについて発信しています。また、僕が運営するエンジニア向け学習コミュニティ内でも相談に乗っていますよ。",
+        question: "itemは普段から電気・NW工事や都内某有名イルミネーションの工事にも積極的に参加させて頂いております。",
     },
     "community": {
         answers: [
