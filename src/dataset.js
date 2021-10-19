@@ -3,7 +3,7 @@ const defaultDataset = {
         answers: [
             {content: "システムの仕事を依頼したい", nextId: "job_offer"},
             {content: "工事の依頼をしたい", nextId: "consultant"},
-            {content: "学習コミュニティについて知りたい", nextId: "community"},
+         //   {content: "学習コミュニティについて知りたい", nextId: "community"},
             {content: "お付き合いしたい", nextId: "dating"},
         ],
         question: "こんにちは！🐳itemへのご用件はなんでしょうか？",
@@ -71,7 +71,7 @@ const defaultDataset = {
     },
     "dating": {
         answers: [
-            {content: "DMする", nextId: "https://twitter.com/torahack_"},
+            {content: "内股打っちまった", nextId: "init"},
             {content: "最初の質問に戻る", nextId: "init"}
         ],
         question: "まずは一緒にランチでもいかがですか？DMしてください😘",

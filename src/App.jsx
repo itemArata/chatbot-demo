@@ -122,7 +122,6 @@ export default class App extends React.Component {
             <Chats chats = {this.state.chats}/>
             <AnswersList answers={this.state.answers} select={this.selectAnswer}/>
             <FormDialog open={this.state.open} handleClose={this.handleClose} />
-            there is nothing worng with this chatBot!🍵
           </div>
         </section>
       );
